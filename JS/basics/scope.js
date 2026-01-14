@@ -6,6 +6,8 @@ function add(x){
     if(true){
         let names="thabitha";
         const subj="english"
+        console.log(names)
+        console.log(subj)
     }
 }
 //function scope example
