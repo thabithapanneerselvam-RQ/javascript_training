@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TO-DO APP</title>
+        <link rel="stylesheet" href="../styles/todo.css">
+    </head>
+
+    <body>
+
+        <header class="main-header">
+            <h2>TO-DO APP</h2>
+        </header>
+
+        <main>
+            <div class="tasks">
+                <form class="taskForm">
+                    <input type="text" id="taskInput" placeholder="Enter task name" required>
+                    <button type="submit" id="taskBtn">Submit</button>
+                </form>
+                
+            </div>
+            
+        
+        <div class="shared-container">
+
+            <div class="completed-tasks">
+                 <p>Completed Tasks:</p>
+                 <ul id="completedList">
+
+                 </ul>
+            </div>
+
+            
+
+        <div class="table-wrapper">
+            <table id="taskTable">
+                <thead>
+                    <tr>
+                        <th>Done</th>
+                        <th>Task Name</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+            
+
+        </div>
+            
+
+        </main>
+
+
+        <script src="../scripts/todo.js"></script>
+    </body>
+</html>

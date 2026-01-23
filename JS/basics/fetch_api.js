@@ -4,7 +4,7 @@
 
             async function fetchingData(){
                 try{
-                    let fetchedData=await fetch("file.txt")
+                    let fetchedData=await fetch("../assets/file.txt")
                     if(!fetchedData.ok){
                         throw new Error('network error')
                     }
