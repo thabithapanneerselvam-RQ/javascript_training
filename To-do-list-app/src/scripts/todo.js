@@ -1,6 +1,8 @@
 const form=document.querySelector("form");
 const taskInput=document.getElementById("taskInput");
 const tableBody=document.querySelector("#taskTable tbody");
+const searchInput=document.getElementById("searchTask");
+const searchBtn=document.getElementById("searchBtn")
 
 const ulList=document.getElementById("completedList");
 
@@ -64,9 +66,23 @@ form.addEventListener("submit", function(event){
 
     tableBody.appendChild(row)
 
-    taskInput.value="";
-
-    
+    taskInput.value="";    
 
 })
+
+
+searchBtn.addEventListener("click", filterTasks);
+
+function filterTasks() {
+  const searchValue = searchInput.value.toLowerCase();
+  const rows = tableBody.querySelectorAll("tr");
+
+  rows.forEach(row=>{
+    const taskText=row.children[1].textContent.toLowerCase();
+    row.style.display=taskText.includes(searchValue) ? "" : "none";
+  });
+}
+
+
+
 

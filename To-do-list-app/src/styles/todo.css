@@ -28,8 +28,8 @@ html{
 
 .tasks{
     margin: 5rem auto;
-    width: 90%;
-    max-width: 50rem;
+    width: 100%;
+    max-width: 70rem;
     font-size: 2rem;
     display: flex;
     flex-direction: row;
@@ -49,27 +49,45 @@ html{
 
 
 .tasks button{
+    height: 5rem;
     font-size: 1.7rem;
-    padding: 1.5rem;
+    padding: 0 2rem;
     color: palevioletred;
     background-color: #fff0f5;
     border: 2px solid palevioletred;
     border-radius: 1rem;
     margin: 0;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .completed-tasks{
     color: palevioletred;
+    font-weight: bold;
     font-size: 2rem;
     width: 90%;
     max-width: 40rem;
+    max-height: 50rem;
+    overflow-y: auto;
     border: 2px solid palevioletred;
-    border-radius: 2rem;
+    border-radius: 1rem;
     padding: 2rem;
     background-color: #fff0f5;
+    list-style: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.09);
+
 }
 
+.completed-tasks li{
+    padding: 1rem 1rem;
+    list-style: decimal;
+    background-color: rgb(250, 204, 219);
+    margin: 2rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.09);
+    border-radius: 1rem;
+}
 
 
 table{
@@ -96,6 +114,7 @@ th, td{
     display: flex;
     gap: 4rem;
     width: 100%;
+    align-items: flex-start;
 }
 
 
@@ -106,12 +125,118 @@ th, td{
     width: 100%;
 }
 
+.taskForm input{
+    flex: 1;
+    min-width: 0;
+}
+
+.taskForm button {
+    flex: 0 0 auto;   
+}
+
+
 .table-wrapper{
     width:90%;
     overflow-x: auto;  
-    justify-content: center; 
-    overflow-x: auto;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.09);
+    border-radius: 1rem;
+ 
 }
+
+
+.tasks button:hover{
+    background-color: palevioletred;
+    color: white;
+    transition: 0.3s;
+}
+
+
+.search-wrapper{
+    position: relative;
+    flex: 1;
+    min-width: 0;
+}
+
+#searchTask{
+    width: 100%;
+    padding: 1.5rem 1.5rem 1.5rem 4rem;
+    height: 5rem;
+    font-size: 1.6rem;
+    background-color: #fff0f5;
+    border: 2px solid palevioletred;
+    border-radius: 1rem;
+}
+
+.search-icon{
+    position: absolute;
+    left: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.6rem;
+    color: palevioletred;
+}
+
+#taskInput{
+    flex: 1; 
+    border-radius: 1rem;
+}
+
+
+.input-wrapper{
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+
+.input-wrapper input{
+    width: 100%;
+    padding: 1.5rem 1.5rem 1.5rem 4rem;
+    height: 5rem;
+    font-size: 1.6rem;
+    background-color: #fff0f5;
+    border: 2px solid palevioletred;
+    border-radius: 1rem;
+}
+
+.task-icon{
+    position: absolute;
+    left: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.6rem;
+    color: palevioletred;
+}
+
+
+.search-wrapper{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon-btn{
+  background: #ffe4ec;
+  border: 2px solid palevioletred;
+  border-radius: 0.8rem;
+  padding: 0.6rem 0.8rem;
+  cursor: pointer;
+}
+
+.icon-btn i{
+  color: palevioletred;
+  font-size: 1.4rem;
+}
+
+.icon-btn:hover{
+  background: palevioletred;
+}
+
+.icon-btn:hover i{
+  color: white;
+}
+
 
 @media (max-width:768px){
     .shared-container, .taskForm{
@@ -128,6 +253,10 @@ th, td{
     .completed-tasks{
         width: 90%;
     }
+
+    .taskForm{
+        width: 80%;
+    }
 }
 
 @media (max-width: 480px){
@@ -135,10 +264,15 @@ th, td{
         flex-direction: column;
     }
 
-    .main-header {
+    .main-header{
         font-size: 2.4rem;
-        height: 14rem;
+        height: 12rem;
+    }
+    
+    .completed-tasks{
+        max-height: 30rem;
     }
 }
+
 
 

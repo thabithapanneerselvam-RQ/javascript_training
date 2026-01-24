@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>TO-DO APP</title>
         <link rel="stylesheet" href="../styles/todo.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     </head>
 
     <body>
@@ -16,9 +18,24 @@
         <main>
             <div class="tasks">
                 <form class="taskForm">
-                    <input type="text" id="taskInput" placeholder="Enter task name" required>
+
+                    <div class="search-wrapper">
+                        <button type="button" id="searchBtn" class="icon-btn">
+                            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        </button>
+                        
+                        <input type="text" id="searchTask" placeholder="Search by task name">
+                    </div>
+
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-list-check task-icon"></i>
+                        <input type="text" id="taskInput" placeholder="Enter task name" required>
+                    </div>
+
                     <button type="submit" id="taskBtn">Submit</button>
+
                 </form>
+
                 
             </div>
             
