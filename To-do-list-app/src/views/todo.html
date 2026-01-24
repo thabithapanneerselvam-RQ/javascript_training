@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>TO-DO APP</title>
         <link rel="stylesheet" href="../styles/todo.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     </head>
 
@@ -21,18 +20,24 @@
 
                     <div class="search-wrapper">
                         <button type="button" id="searchBtn" class="icon-btn">
-                            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                            <img id="searchIcon" alt="Search">
                         </button>
                         
-                        <input type="text" id="searchTask" placeholder="Search by task name">
+                        <input type="text" id="searchTask" placeholder="Search by task name">   
+                
                     </div>
 
-                    <div class="input-wrapper">
+                    <!-- <div class="input-wrapper">
                         <i class="fa-solid fa-list-check task-icon"></i>
                         <input type="text" id="taskInput" placeholder="Enter task name" required>
                     </div>
 
-                    <button type="submit" id="taskBtn">Submit</button>
+                    <button type="submit" id="taskBtn">Submit</button> -->
+                    <button type="button" id="openModalBtn">Create Task</button>
+                     
+                    <div class="filter-wrapper">
+                        <input type="date" id="filterDate">
+                    </div>
 
                 </form>
 
@@ -40,40 +45,58 @@
             </div>
             
         
-        <div class="shared-container">
+            <div class="shared-container">
 
-            <div class="completed-tasks">
-                 <p>Completed Tasks:</p>
-                 <ul id="completedList">
+                <div class="completed-tasks">
+                    <p>Completed Tasks:</p>
+                    <ul id="completedList">
 
-                 </ul>
+                    </ul>
+                </div>
+
+            
+
+                <div class="table-wrapper">
+                    <table id="taskTable">
+                        <thead>
+                            <tr>
+                                <th>Done</th>
+                                <th>Task Name</th>
+                                <th>Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+                
             </div>
 
-            
+            <div class="modal" id="taskModal">
+                <div class="modal-content">
+                    <h2>Create new task</h2>
 
-        <div class="table-wrapper">
-            <table id="taskTable">
-                <thead>
-                    <tr>
-                        <th>Done</th>
-                        <th>Task Name</th>
-                        <th>Date</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
+                    <form id="modalForm">
+                        <input type="text" id="modalTaskName" placeholder="Enter task name" required/>
+                        <input type="time" id="modalTime" required/>
+                        <textarea id="modalDesc" placeholder="Enter task description" rows="5"></textarea>
 
-                </tbody>
-            </table>
-        </div>
-            
+                        <div class="modal-actions">
+                            <button type="submit">Add Task</button>
+                            <button type="button" id="closeModalBtn">Cancel</button>
+                        </div>
 
-        </div>
-            
+                    </form>
+
+                </div>
+            </div>
+
 
         </main>
+    
 
-
-        <script src="../scripts/todo.js"></script>
+        <script type="module" src="../scripts/todo.js"></script>
     </body>
 </html>
