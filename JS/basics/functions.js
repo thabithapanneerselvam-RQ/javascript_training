@@ -74,6 +74,9 @@ function reverseNo(num){
 
 console.log("reverse no is:",reverseNo(12345))
 
+
+const isPrime=checkPrime();
+console.log("check if prime is:",isPrime(7))
 function checkPrime(){
     let count=0;
     return function(n){
@@ -88,5 +91,4 @@ function checkPrime(){
         return true;
     }
 }
-const isPrime=checkPrime();
-console.log("check if prime is:",isPrime(7))
+
