@@ -16,9 +16,9 @@ const time=document.getElementById("modalTime");
 const desc=document.getElementById("modalDesc");
 
 const filterDateInput=document.getElementById("filterDate");
-const clearDateBtn=document.getElementById("clearDateFilter");
 
-
+const sortBtn=document.getElementById("sortTaskBtn");
+let isAscending=true;
 
 const searchIconImg = document.getElementById("searchIcon");
 searchIconImg.src = ICONS.search;
@@ -91,6 +91,7 @@ function filterTasks(){
     const taskText=row.children[1].textContent.toLowerCase();
     row.style.display=taskText.includes(searchValue) ? "" : "none";
   });
+  searchInput.value = "";
 }
 
 
@@ -140,9 +141,24 @@ function filterByDate(){
     })
 }
 
-clearDateBtn.addEventListener("click", ()=>{
-  filterDateInput.value="";
-  const rows=tableBody.querySelectorAll("tr");
 
-  rows.forEach(row=>row.style.display="");
-});
+
+
+sortBtn.addEventListener("click", ()=>{
+  const rows=Array.from(tableBody.querySelectorAll("tr"));
+
+  rows.sort((a,b)=>{
+    const taskA=a.children[1].querySelector("strong").textContent.trim().toLowerCase();
+    const taskB=b.children[1].querySelector("strong").textContent.trim().toLowerCase();
+
+    if(isAscending){
+      return taskA.localeCompare(taskB)
+    }else{
+      return taskB.localeCompare(taskA)
+    }
+  })
+
+  rows.forEach(row=>tableBody.appendChild(row));
+
+  isAscending=!isAscending;
+})
