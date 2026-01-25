@@ -220,7 +220,11 @@ th, td{
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    margin-left: 2.5rem;
+    margin-left: 2.3rem;
+}
+
+#openModalBtn{
+    margin-left: 2.3rem;
 }
 
 .icon-btn{
@@ -246,9 +250,32 @@ th, td{
 
 .form-error {
   color: crimson;
-  font-size: 13px;
-  margin-top: 6px;
+  font-size: 1.3rem;
+  margin-top: 0.6rem;
 }
+
+
+.sortable {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.sort-btn{
+    background-color: palevioletred;
+    border: none;
+    color: #fff0f5;
+    font-size: 2.2rem;
+    cursor: pointer;
+
+}
+
+.sort-btn:hover{
+    transform: scale(1.2);
+}
+
 
 @media (max-width:768px){
     .shared-container, .taskForm{
